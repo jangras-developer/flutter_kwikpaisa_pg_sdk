@@ -8,10 +8,10 @@ class CreatePaymentOrder {
   Future<Map<String, dynamic>> createOrder(Map<String, dynamic> orderData) async {
     // Calculate the checksum
     String checksum = KwikPaisaChecksum.calculateChecksum(orderData);
-    orderData['order_checksum'] = checksum; // Add the checksum to orderData
+    orderData['order_checksum'] = checksum;
 
     final response = await http.post(
-      Uri.parse("${KwikPaisaConfig.baseUrl}/order.php"),
+      Uri.parse("${KwikPaisaConfig.baseUrl}/order"),
       headers: {
         'Content-Type': KwikPaisaConfig.contentType,
         'x-client-id': KwikPaisaConfig.clientId,
