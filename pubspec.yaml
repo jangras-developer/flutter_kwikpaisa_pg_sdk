@@ -1,0 +1,30 @@
+name: flutter_kwikpaisa_pg_sdk
+description: "A Flutter plugin for integrating the KwikPaisa NEO Bank payment gateway."
+version: 0.0.1
+homepage: https://www.kwikpaisa.com
+
+environment:
+  sdk: ^3.5.3
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+  http: ^1.2.2 
+  webview_flutter: ^4.9.0 
+  crypto: ^3.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.jangras.flutter_kwikpaisa_pg_sdk
+        pluginClass: KwikPaisaPaymentGateway 
+      ios:
+        pluginClass: KwikPaisaPaymentGateway
